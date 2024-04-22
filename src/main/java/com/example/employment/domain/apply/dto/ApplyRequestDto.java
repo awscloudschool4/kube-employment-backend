@@ -9,6 +9,7 @@ public class ApplyRequestDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class ApplyReqInfo {
-
+        public String name;
+        public int age;
     }
 }
