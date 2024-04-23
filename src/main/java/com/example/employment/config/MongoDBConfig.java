@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 @Configuration
 public class MongoDBConfig extends AbstractMongoClientConfiguration {
-    //추가
+    
     @Value("${spring.data.mongodb.uri}")
     private String uri;
 
