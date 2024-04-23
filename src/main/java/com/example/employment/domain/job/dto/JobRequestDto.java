@@ -10,6 +10,8 @@ public class JobRequestDto {
     @AllArgsConstructor
     public static class JobReqInfo {
         public String name;
-        public int age;
+        public String title;
+        private String text;
+        private Object questions;
     }
 }

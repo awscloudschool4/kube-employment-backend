@@ -9,7 +9,11 @@ public class MemberRequestDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class MemberReqInfo {
-        public String name;
-        public int age;
+        private String email;
+        private String password;
+        private String name;
+        private String birthday;
+        private String gpa;
+        private String school;
     }
 }

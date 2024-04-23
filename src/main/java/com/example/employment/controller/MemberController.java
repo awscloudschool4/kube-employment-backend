@@ -29,4 +29,16 @@ public class MemberController {
         logger.info("Responding with body: {}", "회원 정보 저장");
         return ResponseEntity.ok(memberService.saveMember(memberReqInfo));
     }
+
+    @DeleteMapping("/member/{index}")
+    public ResponseEntity<String> deleteMember(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "회원 삭제");
+        return ResponseEntity.ok(memberService.deleteMember(index));
+    }
+
+    @GetMapping("/member/{index}")
+    public ResponseEntity<Member> findByIndex(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "해당 회원 조회");
+        return ResponseEntity.ok(memberService.findByIndex(index));
+    }
 }

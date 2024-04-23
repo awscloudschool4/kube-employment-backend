@@ -30,4 +30,22 @@ public class ApplyController {
         logger.info("Responding with body: {}", "지원서 정보 저장");
         return ResponseEntity.ok(applyService.saveApply(applyReqInfo));
     }
+
+    @PutMapping("/apply")
+    public ResponseEntity<String> updatePass(@RequestPart(value="ApplyPassInfo")ApplyRequestDto.ApplyPassInfo applyPassInfo) {
+        logger.info("Responding with body: {}", "합격 여부 수정");
+        return ResponseEntity.ok(applyService.updatePass(applyPassInfo));
+    }
+
+    @DeleteMapping("/apply/{index}")
+    public ResponseEntity<String> deleteApply(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "지원서 삭제");
+        return ResponseEntity.ok(applyService.deleteApply(index));
+    }
+
+    @GetMapping("/apply/{index}")
+    public ResponseEntity<Apply> getApplyByIndex(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "해당 지원서 출력");
+        return ResponseEntity.ok(applyService.findByIndex(index));
+    }
 }

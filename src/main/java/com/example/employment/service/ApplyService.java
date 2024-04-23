@@ -25,4 +25,21 @@ public class ApplyService {
         Apply save=applyRepositoy.save(apply);
         return save.getIndex()+" 번째 지원서 정보 저장 완료";
     }
+
+    public String updatePass(ApplyRequestDto.ApplyPassInfo applyPassInfo) {
+        Apply apply=applyRepositoy.findByIndex(applyPassInfo.getIndex());
+        apply.setIsPass(applyPassInfo.getPass());
+        applyRepositoy.save(apply);
+        return apply.getName() + " 합격 여부 수정 완료";
+    }
+
+    public String deleteApply(int index) {
+        Apply apply=applyRepositoy.findByIndex(index);
+        applyRepositoy.delete(apply);
+        return apply.getName() + " 지원서 삭제";
+    }
+
+    public Apply findByIndex(int index) {
+        return applyRepositoy.findByIndex(index);
+    }
 }

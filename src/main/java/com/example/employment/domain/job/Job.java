@@ -17,15 +17,21 @@ import java.time.format.DateTimeFormatter;
 public class Job {
     @Id
     private String id;
-    private String name;
-    private int age;
     private int index;
-    private String date;
+    private String title;
+    private String name;
+    private String writeDate;
+    private String updateDate;
+    private String text;
+    private Object questions;
     public Job(JobRequestDto.JobReqInfo jobReqInfo, int count) {
         this.index=count+1;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        this.date= LocalDateTime.now().format(formatter);
+        this.title=jobReqInfo.getTitle();
         this.name=jobReqInfo.getName();
-        this.age=jobReqInfo.getAge();
+        this.writeDate = LocalDateTime.now().format(formatter);
+        this.updateDate = LocalDateTime.now().format(formatter);
+        this.text=jobReqInfo.getText();
+        this.questions = jobReqInfo.getQuestions();
     }
 }

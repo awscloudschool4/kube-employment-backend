@@ -25,4 +25,14 @@ public class MemberService {
         Member save = memberRepository.save(member);
         return save.getIndex()+" 번째 회원 정보 저장 완료";
     }
+
+    public String deleteMember(int index) {
+        Member member = memberRepository.findByIndex(index);
+        memberRepository.delete(member);
+        return member.getName() + " 회원 정보 삭제";
+    }
+
+    public Member findByIndex(int index) {
+        return memberRepository.findByIndex(index);
+    }
 }

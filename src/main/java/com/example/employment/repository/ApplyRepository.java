@@ -9,4 +9,6 @@ import java.util.List;
 @EnableMongoRepositories
 public interface ApplyRepository extends MongoRepository<Apply, String> {
     List<Apply> findAll();
+
+    Apply findByIndex(int index);
 }

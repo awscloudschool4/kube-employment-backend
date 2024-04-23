@@ -9,4 +9,5 @@ import java.util.List;
 @EnableMongoRepositories
 public interface MemberRepository extends MongoRepository<Member, String> {
     List<Member> findAll();
+    Member findByIndex(int index);
 }

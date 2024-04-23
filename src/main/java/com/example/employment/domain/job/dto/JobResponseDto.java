@@ -10,7 +10,10 @@ import lombok.NoArgsConstructor;
 public class JobResponseDto {
     private String id;
     private int index;
+    private String title;
     private String name;
-    private int age;
-    private String date;
+    private String writeDate;
+    private String updateDate;
+    private String text;
+    private Object questions;
 }

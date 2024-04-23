@@ -10,7 +10,11 @@ import lombok.NoArgsConstructor;
 public class MemberResponseDto {
     private String id;
     private int index;
+    private String email;
+    private String password;
     private String name;
-    private int age;
+    private String birthday;
+    private String gpa;
+    private String school;
     private String date;
 }

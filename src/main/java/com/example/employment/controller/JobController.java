@@ -29,4 +29,16 @@ public class JobController {
         logger.info("Responding with body: {}", "취업 공고 저장");
         return ResponseEntity.ok(jobService.saveJob(jobReqInfo));
     }
+
+    @DeleteMapping("/job/{index}")
+    public ResponseEntity<String> deleteJob(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "취업 공고 삭제");
+        return ResponseEntity.ok(jobService.deleteJob(index));
+    }
+
+    @GetMapping("/job/{index}")
+    public ResponseEntity<Job> findByIndex(@PathVariable("index") int index) {
+        logger.info("Responding with body: {}", "해당 공고 검색");
+        return ResponseEntity.ok(jobService.findByIndex(index));
+    }
 }
