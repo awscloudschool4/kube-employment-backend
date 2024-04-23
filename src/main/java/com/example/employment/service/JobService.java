@@ -17,7 +17,7 @@ public class JobService {
     public List<Job> findAll() {
         return jobRepository.findAll();
     }
-
+    //test
     public String saveJob(JobRequestDto.JobReqInfo jobReqInfo) {
         int count= (int) jobRepository.count();
         Job job=new Job(jobReqInfo, count);
