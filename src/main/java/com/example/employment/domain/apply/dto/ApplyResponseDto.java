@@ -13,6 +13,7 @@ public class ApplyResponseDto {
     private String id;
     private int index;
     private String name;
+    private String jobName;
     private String writeDate;
     private Object answer;
     private String isPass;

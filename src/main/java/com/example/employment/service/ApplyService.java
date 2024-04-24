@@ -42,4 +42,8 @@ public class ApplyService {
     public Apply findByIndex(int index) {
         return applyRepositoy.findByIndex(index);
     }
+
+    public List<Apply> findByJobName(String jobname) {
+        return applyRepositoy.findByJobName(jobname);
+    }
 }

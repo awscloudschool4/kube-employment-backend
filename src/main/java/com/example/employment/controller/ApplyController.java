@@ -48,4 +48,10 @@ public class ApplyController {
         logger.info("Responding with body: {}", "해당 지원서 출력");
         return ResponseEntity.ok(applyService.findByIndex(index));
     }
+
+    @GetMapping("/apply/job/{jobName}")
+    public ResponseEntity<List<Apply>> getApplyByJobName(@PathVariable("jobName") String jobName) {
+        logger.info("Responding with body: {}", "해당 지원서 출력");
+        return ResponseEntity.ok(applyService.findByJobName(jobName));
+    }
 }

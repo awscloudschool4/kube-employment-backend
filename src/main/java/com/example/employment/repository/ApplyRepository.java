@@ -11,4 +11,6 @@ public interface ApplyRepository extends MongoRepository<Apply, String> {
     List<Apply> findAll();
 
     Apply findByIndex(int index);
+
+    List<Apply> findByJobName(String jobName);
 }

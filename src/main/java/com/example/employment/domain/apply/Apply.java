@@ -22,6 +22,7 @@ public class Apply {
     private String id;
     private int index;
     private String name;
+    private String jobName;
     private String writeDate;
     private Object answer;
     private String isPass;
@@ -29,6 +30,7 @@ public class Apply {
         this.index=count+1;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.name=applyReqInfo.getName();
+        this.name=applyReqInfo.getJobName();
         this.writeDate = LocalDateTime.now().format(formatter);
         this.answer=applyReqInfo.getAnswer();
         this.isPass= applyReqInfo.getIsPass();

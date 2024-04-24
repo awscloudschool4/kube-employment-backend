@@ -12,9 +12,9 @@ public class ApplyRequestDto {
     @AllArgsConstructor
     public static class ApplyReqInfo {
         private String name;
-        private String writeDate;
         private Object answer;
         private String isPass;
+        private String jobName;
     }
 
     @Getter
