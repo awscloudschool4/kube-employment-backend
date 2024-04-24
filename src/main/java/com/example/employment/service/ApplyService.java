@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -43,7 +44,16 @@ public class ApplyService {
         return applyRepositoy.findByIndex(index);
     }
 
-    public List<Apply> findByJobName(String jobname) {
-        return applyRepositoy.findByJobName(jobname);
+    public List<Apply> findByJobName(String jobName) {
+        List<Apply> applies=applyRepositoy.findAll();
+        List<Apply> result=new ArrayList<>();
+        for (int i = 0; i < applies.size(); i++) {
+            System.out.println(applies.get(i).getJobName() + jobName);
+            if (applies.get(i).getJobName()==jobName) {
+                result.add(applies.get(i));
+
+            }
+        }
+        return result;
     }
 }

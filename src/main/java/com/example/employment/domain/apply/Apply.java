@@ -30,7 +30,7 @@ public class Apply {
         this.index=count+1;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.name=applyReqInfo.getName();
-        this.name=applyReqInfo.getJobName();
+        this.jobName=applyReqInfo.getJobName();
         this.writeDate = LocalDateTime.now().format(formatter);
         this.answer=applyReqInfo.getAnswer();
         this.isPass= applyReqInfo.getIsPass();
