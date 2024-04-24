@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -48,10 +49,8 @@ public class ApplyService {
         List<Apply> applies=applyRepositoy.findAll();
         List<Apply> result=new ArrayList<>();
         for (int i = 0; i < applies.size(); i++) {
-            System.out.println(applies.get(i).getJobName() + jobName);
-            if (applies.get(i).getJobName()==jobName) {
+            if (Objects.equals(applies.get(i).getJobName(), jobName)) {
                 result.add(applies.get(i));
-
             }
         }
         return result;
