@@ -16,4 +16,12 @@ public class MemberRequestDto {
         private String gpa;
         private String school;
     }
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class LoginReqInfo {
+        private String email;
+        private String password;
+    }
 }

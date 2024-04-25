@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -34,5 +35,24 @@ public class MemberService {
 
     public Member findByIndex(int index) {
         return memberRepository.findByIndex(index);
+    }
+
+    public String login(MemberRequestDto.LoginReqInfo loginReqInfo) {
+        String email=loginReqInfo.getEmail();
+        String password=loginReqInfo.getPassword();
+        List<Member> members=memberRepository.findAll();
+        Boolean isCorrect = false;
+        for (int i=0;i<members.size();i++) {
+            if (Objects.equals(members.get(i).getEmail(), email) && Objects.equals(members.get(i).getPassword(), password)) {
+                isCorrect = true;
+                break;
+            }
+        }
+        if (isCorrect) {
+            return "로그인 성공!";
+        }
+        else {
+            return "아이디 비밀번호를 다시 확인해주세요.";
+        }
     }
 }

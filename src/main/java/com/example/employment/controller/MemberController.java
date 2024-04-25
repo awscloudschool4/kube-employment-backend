@@ -41,4 +41,10 @@ public class MemberController {
         logger.info("Responding with body: {}", "해당 회원 조회");
         return ResponseEntity.ok(memberService.findByIndex(index));
     }
+
+    @PostMapping("/member/login")
+    public ResponseEntity<String> login(@RequestPart(value = "LoginReqInfo")MemberRequestDto.LoginReqInfo loginReqInfo) {
+        logger.info("Responding with body: {}", "로그인");
+        return ResponseEntity.ok(memberService.login(loginReqInfo));
+    }
 }
