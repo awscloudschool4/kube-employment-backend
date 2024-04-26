@@ -1,5 +1,5 @@
 spring:
   data:
     mongodb:
-      uri : mongodb://mongodb.mongodb-svc.db-ns.svc.cluster.local
+      uri : mongodb://mongodb-svc.db-ns.svc.cluster.local:27017
       database: employment
