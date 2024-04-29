@@ -24,4 +24,11 @@ public class ApplyRequestDto {
         private String pass;
         private int index;
     }
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ApplyNameInfo {
+        private String name;
+    }
 }

@@ -45,11 +45,24 @@ public class ApplyService {
         return applyRepositoy.findByIndex(index);
     }
 
-    public List<Apply> findByJobName(String jobName) {
+    public List<Apply> findByJobName(ApplyRequestDto.ApplyNameInfo applyNameInfo) {
+        String jobName=applyNameInfo.getName();
         List<Apply> applies=applyRepositoy.findAll();
         List<Apply> result=new ArrayList<>();
         for (int i = 0; i < applies.size(); i++) {
             if (Objects.equals(applies.get(i).getJobName(), jobName)) {
+                result.add(applies.get(i));
+            }
+        }
+        return result;
+    }
+
+    public List<Apply> findByName(ApplyRequestDto.ApplyNameInfo applyNameInfo) {
+        String name=applyNameInfo.getName();
+        List<Apply> applies=applyRepositoy.findAll();
+        List<Apply> result=new ArrayList<>();
+        for (int i = 0; i < applies.size(); i++) {
+            if (Objects.equals(applies.get(i).getName(), name)) {
                 result.add(applies.get(i));
             }
         }

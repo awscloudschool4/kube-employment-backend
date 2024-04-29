@@ -21,6 +21,7 @@ public class Member {
     private String email;
     private String password;
     private String name;
+    private String type;
     private String birthday;
     private String gpa;
     private String school;
@@ -32,6 +33,7 @@ public class Member {
         this.email=memberReqInfo.getEmail();
         this.password = memberReqInfo.getPassword();
         this.name=memberReqInfo.getName();
+        this.type=memberReqInfo.getType();
         this.birthday= memberReqInfo.getBirthday();
         this.gpa = memberReqInfo.getGpa();
         this.school= memberReqInfo.getSchool();

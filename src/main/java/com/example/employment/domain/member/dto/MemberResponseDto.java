@@ -13,6 +13,7 @@ public class MemberResponseDto {
     private String email;
     private String password;
     private String name;
+    private String type;
     private String birthday;
     private String gpa;
     private String school;

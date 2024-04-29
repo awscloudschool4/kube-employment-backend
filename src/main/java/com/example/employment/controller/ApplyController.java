@@ -49,9 +49,15 @@ public class ApplyController {
         return ResponseEntity.ok(applyService.findByIndex(index));
     }
 
-    @GetMapping("/apply/job/{jobName}")
-    public ResponseEntity<List<Apply>> getApplyByJobName(@PathVariable("jobName") String jobName) {
+    @GetMapping("/apply/job")
+    public ResponseEntity<List<Apply>> getApplyByJobName(@RequestPart(value="ApplyNameInfo")ApplyRequestDto.ApplyNameInfo applyNameInfo) {
         logger.info("Responding with body: {}", "해당 지원서 출력");
-        return ResponseEntity.ok(applyService.findByJobName(jobName));
+        return ResponseEntity.ok(applyService.findByJobName(applyNameInfo));
+    }
+
+    @GetMapping("/apply/name")
+    public ResponseEntity<List<Apply>> getApplyByName(@RequestPart(value="ApplyNameInfo")ApplyRequestDto.ApplyNameInfo applyNameInfo) {
+        logger.info("Responding with body: {}", "해당 지원서 출력");
+        return ResponseEntity.ok(applyService.findByName(applyNameInfo));
     }
 }
