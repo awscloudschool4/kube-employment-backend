@@ -1,7 +1,5 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://43.202.57.81:27017/
+      uri: mongodb://adminuser:password123@43.202.57.81:27017/employment?authSource=admin
       database: employment
-      username: adminuser
-      password: password123

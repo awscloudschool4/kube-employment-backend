@@ -21,12 +21,6 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
     @Value("${spring.data.mongodb.database}")
     private String databaseName;
 
-    @Value("${spring.data.mongodb.username}") // 사용자 이름
-    private String username;
-
-    @Value("${spring.data.mongodb.password}") // 비밀번호
-    private String password;
-
     @Override
     protected String getDatabaseName() {
         return databaseName;
@@ -38,7 +32,6 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
 
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
-                .credential(MongoCredential.createCredential(username, getDatabaseName(), password.toCharArray())) // 사용자 이름과 비밀번호 설정
                 .build();
 
         return MongoClients.create(mongoClientSettings);
@@ -49,3 +42,4 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
         return new MongoTemplate(new SimpleMongoClientDatabaseFactory(mongoClient(), getDatabaseName()));
     }
 }
+

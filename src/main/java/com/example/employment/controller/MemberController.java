@@ -48,7 +48,7 @@ public class MemberController {
         return ResponseEntity.ok(memberService.login(loginReqInfo));
     }
 
-    @GetMapping("/member/email")
+    @PostMapping("/member/email")
     public ResponseEntity<List<Member>> findByEmail(@RequestPart(value="EmailReqInfo")MemberRequestDto.EmailRefInfo emailRefInfo) {
         logger.info("Responding with body: {}", "이메일로 회원 조회");
         return ResponseEntity.ok(memberService.findByEmail(emailRefInfo));
