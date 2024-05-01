@@ -1,7 +1,5 @@
 spring:
   data:
     mongodb:
-      uri : mongodb://mongodb-svc.db-ns.svc.cluster.local:27017
+      uri : mongodb://adminuser:password123@mongodb-svc.db-ns.svc.cluster.local:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
       database: employment
-      username: adminuser
-      password: password123
