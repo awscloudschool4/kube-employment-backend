@@ -38,7 +38,7 @@ public class JobController {
 
     @GetMapping("/job/{index}")
     public ResponseEntity<Job> findByIndex(@PathVariable("index") int index) {
-        logger.info("Responding with body: {}", "해당 공고 검색");
+        logger.info("Responding with body: {}", "인덱스로 공고 검색");
         return ResponseEntity.ok(jobService.findByIndex(index));
     }
 }

@@ -25,4 +25,11 @@ public class MemberRequestDto {
         private String email;
         private String password;
     }
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class EmailRefInfo {
+        private String email;
+    }
 }

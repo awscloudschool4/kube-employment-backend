@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -54,5 +55,17 @@ public class MemberService {
         else {
             return "아이디 비밀번호를 다시 확인해주세요.";
         }
+    }
+
+    public List<Member> findByEmail(MemberRequestDto.EmailRefInfo emailRefInfo) {
+        String email=emailRefInfo.getEmail();
+        List<Member> members=memberRepository.findAll();
+        List<Member> result=new ArrayList<>();
+        for (int i = 0; i < members.size(); i++) {
+            if (Objects.equals(members.get(i).getEmail(), email)) {
+                result.add(members.get(i));
+            }
+        }
+        return result;
     }
 }

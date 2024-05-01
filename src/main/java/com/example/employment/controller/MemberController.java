@@ -38,7 +38,7 @@ public class MemberController {
 
     @GetMapping("/member/{index}")
     public ResponseEntity<Member> findByIndex(@PathVariable("index") int index) {
-        logger.info("Responding with body: {}", "해당 회원 조회");
+        logger.info("Responding with body: {}", "인덱스로 회원 조회");
         return ResponseEntity.ok(memberService.findByIndex(index));
     }
 
@@ -46,5 +46,11 @@ public class MemberController {
     public ResponseEntity<String> login(@RequestPart(value = "LoginReqInfo")MemberRequestDto.LoginReqInfo loginReqInfo) {
         logger.info("Responding with body: {}", "로그인");
         return ResponseEntity.ok(memberService.login(loginReqInfo));
+    }
+
+    @GetMapping("/member/email")
+    public ResponseEntity<List<Member>> findByEmail(@RequestPart(value="EmailReqInfo")MemberRequestDto.EmailRefInfo emailRefInfo) {
+        logger.info("Responding with body: {}", "이메일로 회원 조회");
+        return ResponseEntity.ok(memberService.findByEmail(emailRefInfo));
     }
 }

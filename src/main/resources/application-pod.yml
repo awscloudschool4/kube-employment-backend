@@ -3,3 +3,5 @@ spring:
     mongodb:
       uri : mongodb://mongodb-svc.db-ns.svc.cluster.local:27017
       database: employment
+      username: adminuser
+      password: password123
