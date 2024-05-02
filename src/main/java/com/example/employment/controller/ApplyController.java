@@ -49,13 +49,13 @@ public class ApplyController {
         return ResponseEntity.ok(applyService.findByIndex(index));
     }
 
-    @GetMapping("/apply/job")
+    @PostMapping("/apply/job")
     public ResponseEntity<List<Apply>> getApplyByJobName(@RequestPart(value="ApplyNameInfo")ApplyRequestDto.ApplyNameInfo applyNameInfo) {
         logger.info("Responding with body: {}", "회사이름으로 지원서 조회");
         return ResponseEntity.ok(applyService.findByJobName(applyNameInfo));
     }
 
-    @GetMapping("/apply/name")
+    @PostMapping("/apply/name")
     public ResponseEntity<List<Apply>> getApplyByName(@RequestPart(value="ApplyNameInfo")ApplyRequestDto.ApplyNameInfo applyNameInfo) {
         logger.info("Responding with body: {}", "이름으로 지원서 조회");
         return ResponseEntity.ok(applyService.findByName(applyNameInfo));
